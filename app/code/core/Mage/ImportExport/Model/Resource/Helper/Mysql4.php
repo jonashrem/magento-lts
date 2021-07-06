@@ -63,7 +63,6 @@ class Mage_ImportExport_Model_Resource_Helper_Mysql4 extends Mage_Core_Model_Res
     {
         $connection = $this->_getReadAdapter();
 
-        if (empty($entityStatus['Auto_increment'])) {
         $sql = sprintf(
             'SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = %s AND TABLE_SCHEMA = DATABASE()',
             $this->quote($tableName)
