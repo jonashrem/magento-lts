@@ -61,8 +61,7 @@ class Mage_ImportExport_Model_Resource_Helper_Mysql4 extends Mage_Core_Model_Res
      */
     public function getNextAutoincrement($tableName)
     {
-        $connection = $this->getConnection();
-        $entityStatus = $connection->showTableStatus($tableName);
+        $connection = $this->_getReadAdapter();
 
         if (empty($entityStatus['Auto_increment'])) {
         $sql = sprintf(
